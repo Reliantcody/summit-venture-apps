@@ -2,32 +2,21 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   async rewrites() {
-    return [
-      {
-        source: "/golf-pool/:path*",
-        destination: "https://golf.summitventure.io/:path*",
-      },
-      {
-        source: "/group-scheduler/:path*",
-        destination: "https://schedule.summitventure.io/:path*",
-      },
-      {
-        source: "/loan-tracker/:path*",
-        destination: "https://loans.summitventure.io/:path*",
-      },
-      {
-        source: "/asset-tracker/:path*",
-        destination: "https://assets.summitventure.io/:path*",
-      },
-      {
-        source: "/travel-tracker/:path*",
-        destination: "https://travel.summitventure.io/:path*",
-      },
-      {
-        source: "/komune/:path*",
-        destination: "https://komune.summitventure.io/:path*",
-      },
+    const proxyRoutes = [
+      { slug: "golf-pool", host: "https://golf.summitventure.io" },
+      { slug: "group-scheduler", host: "https://schedule.summitventure.io" },
+      { slug: "loan-tracker", host: "https://loans.summitventure.io" },
+      { slug: "asset-tracker", host: "https://assets.summitventure.io" },
+      { slug: "travel-tracker", host: "https://travel.summitventure.io" },
+      { slug: "komune", host: "https://komune.summitventure.io" },
     ];
+
+    const beforeFiles = proxyRoutes.flatMap(({ slug, host }) => [
+      { source: `/${slug}`, destination: `${host}/` },
+      { source: `/${slug}/:path*`, destination: `${host}/:path*` },
+    ]);
+
+    return { beforeFiles };
   },
 };
 

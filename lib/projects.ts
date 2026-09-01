@@ -2,54 +2,75 @@ export interface Project {
   slug: string;
   name: string;
   description: string;
+  icon: string;
   status: "live" | "building" | "beta";
   url: string;
+  category: "tools" | "sites";
 }
 
-// Descriptions based on each app's actual functionality. URLs point to real live
-// deployments where known; travel-tracker and bryce-charity aren't deployed yet.
 export const PROJECTS: Project[] = [
   {
     slug: "golf-pool",
     name: "Golf Pool",
-    description: "A private pick'em pool for golf's major tournaments — PIN-based login, no accounts to manage.",
+    icon: "⛳",
+    description: "Pick'em pool for golf's major tournaments. PIN-based login, no accounts needed.",
     status: "live",
-    url: "https://golf-pool-tawny.vercel.app",
+    url: "https://golf.summitventure.io",
+    category: "tools",
   },
   {
     slug: "group-scheduler",
     name: "Group Scheduler",
-    description: "A lightweight tool for coordinating schedules and finding times that work across a group.",
+    icon: "📅",
+    description: "Find times that work across a group. Share a link, collect availability, done.",
     status: "live",
-    url: "https://group-scheduler-lemon.vercel.app",
+    url: "https://schedule.summitventure.io",
+    category: "tools",
   },
   {
-    slug: "summit-finance",
-    name: "Summit Finance",
-    description: "A personal finance dashboard for tracking spending, budgets, and net worth.",
+    slug: "loan-tracker",
+    name: "Loan Tracker",
+    icon: "💰",
+    description: "Track loans and leases across deals — balances, terms, and payment schedules.",
     status: "live",
-    url: "https://summit-finance.vercel.app",
+    url: "https://loans.summitventure.io",
+    category: "tools",
+  },
+  {
+    slug: "asset-tracker",
+    name: "Asset Tracker",
+    icon: "🏗️",
+    description: "Rental asset tracker for RMR properties — equipment, units, and maintenance.",
+    status: "live",
+    url: "https://assets.summitventure.io",
+    category: "tools",
   },
   {
     slug: "travel-tracker",
     name: "Travel Tracker",
-    description: "A trip planner and travel log for keeping itineraries and past trips in one place.",
-    status: "building",
-    url: "TODO_NEEDS_URL",
-  },
-  {
-    slug: "bryce-charity",
-    name: "Ride-Along Donations",
-    description: "A donation and fundraising platform built for a charity ride-along event.",
-    status: "building",
-    url: "TODO_NEEDS_URL",
-  },
-  {
-    slug: "application-tracker",
-    name: "Application Tracker",
-    description: "A tool for tracking job applications, statuses, and follow-ups end to end.",
+    icon: "✈️",
+    description: "Trip planner and travel log — itineraries and past trips in one place.",
     status: "live",
-    url: "https://application-tracker-three-sepia.vercel.app",
+    url: "https://travel.summitventure.io",
+    category: "tools",
+  },
+  {
+    slug: "komune",
+    name: "Komune Meetups",
+    icon: "🤝",
+    description: "Komune community landing page and meetup signups for the Portland network.",
+    status: "live",
+    url: "https://komune.summitventure.io",
+    category: "tools",
+  },
+  {
+    slug: "summit-venture-site",
+    name: "Summit Venture",
+    icon: "🏔️",
+    description: "Public marketing site — Summit Venture Solutions brand, services, and contact.",
+    status: "live",
+    url: "https://summitventure.io",
+    category: "sites",
   },
 ];
 
