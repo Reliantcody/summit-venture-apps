@@ -64,6 +64,15 @@ export const PROJECTS: Project[] = [
     category: "tools",
   },
   {
+    slug: "dashboard",
+    name: "Finance Dashboard",
+    icon: "📊",
+    description: "Summit Venture P&L, net worth tracker, and personal finance overview.",
+    status: "active",
+    url: "https://dashboard.summitventure.io",
+    category: "tools",
+  },
+  {
     slug: "summit-venture-site",
     name: "Summit Venture",
     icon: "🏔️",

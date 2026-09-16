@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
       { slug: "asset-tracker", host: "https://assets.summitventure.io" },
       { slug: "travel-tracker", host: "https://travel.summitventure.io" },
       { slug: "komune", host: "https://komune.summitventure.io" },
+      { slug: "dashboard", host: "https://dashboard.summitventure.io" },
     ];
 
     const beforeFiles = proxyRoutes.flatMap(({ slug, host }) => [
