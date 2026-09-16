@@ -1,15 +1,15 @@
 import type { Project } from "@/lib/projects";
 
 const statusColors: Record<Project["status"], string> = {
-  live: "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400",
-  beta: "bg-amber-500/15 text-amber-700 dark:text-amber-400",
-  building: "bg-zinc-500/15 text-zinc-500",
+  "active": "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400",
+  "in-progress": "bg-amber-500/15 text-amber-700 dark:text-amber-400",
+  "early-stage": "bg-zinc-500/15 text-zinc-500",
 };
 
 const statusLabel: Record<Project["status"], string> = {
-  live: "Live",
-  beta: "Beta",
-  building: "Building",
+  "active": "Active",
+  "in-progress": "In Progress",
+  "early-stage": "Early Stage",
 };
 
 export function ProjectCard({ project }: { project: Project }) {
